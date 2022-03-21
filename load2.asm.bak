@@ -1,0 +1,17 @@
+
+[org 0x7e00]
+
+push _success_string
+call prints
+
+push _test_str
+call prints
+
+jmp $
+
+%include "io.asm"
+
+_success_string: db 'Successfully loaded sectors.', 0
+_test_str: db 'This is a test string...', 0
+
+times 2048-($-$$) db 0
